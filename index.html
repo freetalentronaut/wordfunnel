@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Word Funnel — Where Words Flow and Results Grow</title>
+  <meta name="description" content="Word Funnel: professional content writing for corporates, NGOs and education. Website copy, reports, scripts, PR, blogs, video scripts, resumes and more."/>
+  <meta name="author" content="George Rajasekaran — Word Funnel" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['Playfair Display', 'serif']
+          },
+          colors: {
+            wfbg: '#07101a',
+            gold: '#cbb067',
+            accent: {
+              DEFAULT: '#1ea0ff'
+            },
+            card: 'rgba(255,255,255,0.03)'
+          },
+          boxShadow: {
+            glow: '0 10px 40px rgba(30,160,255,0.12)',
+            deep: '0 30px 80px rgba(2,6,23,0.65)'
+          },
+          keyframes: {
+            floaty: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
+            shine: { '0%': { backgroundPosition: '0% 50%' }, '100%': { backgroundPosition: '200% 50%' } },
+            marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+            pulseScale: { '0%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.02)' }, '100%': { transform: 'scale(1)' } }
+          },
+          animation: {
+            floaty: 'floaty 6s ease-in-out infinite',
+            shine: 'shine 6s linear infinite',
+            marquee: 'marquee 24s linear infinite',
+            pulseScale: 'pulseScale 3.6s ease-in-out infinite'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: linear-gradient(180deg,#07101a 0%, #05080b 100%); color: #e6eef8; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); backdrop-filter: blur(6px) saturate(120%); border-radius: 12px; }
+    .card-hover { transition: transform .32s ease, box-shadow .32s ease; }
+    .card-hover:hover { transform: translateY(-10px); box-shadow: 0 30px 80px rgba(2,6,23,0.65); }
+    .img-hover { transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .4s; will-change: transform; }
+    .img-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 30px 70px rgba(2,6,23,0.6); }
+    .underline-anim { position: relative; display:inline-block; }
+    .underline-anim::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 0; height: 3px; background: #cbb067; transition: width .28s ease; border-radius: 2px; }
+    .underline-anim:hover::after { width: 100%; }
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+    .promo-float { position: fixed; right: 18px; bottom: 18px; z-index: 80; width: 86px; height:86px; border-radius:14px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg,#08121a,#102232); border: 3px solid rgba(255,255,255,0.04); box-shadow: 0 18px 54px rgba(0,0,0,0.6); transition: transform .18s ease; }
+    .promo-float img{ width:70px; height:70px; object-fit:cover; border-radius:10px; }
+    .promo-float:hover { transform: translateY(-6px) scale(1.04); }
+    .testi-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); border-radius: 10px; padding: 1.1rem; transition: transform .36s, box-shadow .36s; }
+    .testi-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(2,6,23,0.6); }
+    .founder-img { border-radius: 12px; object-fit: cover; width:100%; height:100%; }
+    a:focus { outline: 3px solid rgba(203,176,103,0.08); outline-offset: 4px; }
+    @media (min-width:1024px){ .hero-title{ font-size: 3.2rem; line-height: 1.02; } }
+  </style>
+</head>
+<body class="antialiased">
+
+  
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-gradient-to-b from-transparent to-black/40 backdrop-blur border-b border-white/6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-20 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3">
+          <img src="companylogo.jpg" alt="Word Funnel logo" class="h-12 w-12 object-contain rounded-md shadow-sm" />
+          <div>
+            <div class="text-lg font-semibold" style="font-family: 'Playfair Display', serif; color: #cbb067;">Word Funnel</div>
+            <div class="text-xs text-slate-400">Where words flow and results grow</div>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a href="#about" class="hover:text-white">About</a>
+          <a href="#services" class="hover:text-white">Services</a>
+          <a href="#work" class="hover:text-white">Work</a>
+          <a href="#testimonials" class="hover:text-white">Testimonials</a>
+          <a href="#founder" class="hover:text-white">Founder</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#booking" class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold" style="background:#cbb067;color:#07101a;">Book / Appointment</a>
+
+          <button id="mobileBtn" aria-expanded="false" class="md:hidden p-2 rounded-md text-slate-300 hover:bg-white/5">
+            <svg id="openIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+            <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" viewBox="0 0 20 20" fill="currentColor"><path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293A1 1 0 014.293 18.707L8.586 14.414 4.293 10.121a1 1 0 010-1.414z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-black/60 backdrop-blur border-t border-white/6">
+      <div class="px-4 py-4 space-y-2">
+        <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-white/5">About</a>
+        <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-white/5">Services</a>
+        <a href="#work" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-white/5">Work</a>
+        <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-white/5">Testimonials</a>
+        <a href="#founder" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-white/5">Founder</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-white/5">Contact</a>
+        <a href="#booking" class="block mx-3 mt-2 px-4 py-2 rounded-full text-center font-semibold" style="background:#cbb067; color:#07101a;">Book / Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="relative overflow-hidden pt-10 pb-24">
+      <div class="absolute inset-0 -z-10">
+        <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=2000&auto=format&fit=crop" alt="writing background" class="w-full h-full object-cover brightness-50">
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(7,16,26,0.6), rgba(7,10,14,0.9));"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div data-aos="fade-right" class="space-y-6">
+            <div class="inline-flex items-center gap-3">
+              <span class="px-3 py-1 rounded-full text-xs font-semibold" style="background:rgba(203,176,103,0.12); color:var(--gold);">Since 2007</span>
+              <span class="text-sm text-slate-300">Content for corporates, NGOs & education</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold hero-title" style="font-family:'Playfair Display',serif; color:#fff;">
+              Word Funnel — Where Words Flow and Results Grow
+            </h1>
+
+            <p class="text-lg text-slate-300 max-w-xl">
+              At Word Funnel we weaponize the written word. We help organisations communicate clearly, build trust and convert readers into stakeholders through precise, purpose-driven content — from web pages and reports to documentary scripts and social campaigns.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-4">
+              <a href="#booking" class="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold" style="background:#cbb067; color:#07101a;">Book Appointment</a>
+              <a href="#services" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-slate-200 hover:bg-white/5 transition">Explore Services</a>
+            </div>
+
+            <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-lg">
+              <div class="glass p-3 rounded-lg text-center">
+                <div class="text-xs text-slate-300">Online</div>
+                <div class="font-bold">Web & Social</div>
+              </div>
+              <div class="glass p-3 rounded-lg text-center">
+                <div class="text-xs text-slate-300">Offline</div>
+                <div class="font-bold">Reports & Books</div>
+              </div>
+              <div class="glass p-3 rounded-lg text-center">
+                <div class="text-xs text-slate-300">Visual</div>
+                <div class="font-bold">Films & Scripts</div>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="zoom-in" class="card-hover">
+            <div class="glass p-6 rounded-2xl">
+              <img class="rounded-xl w-full h-72 object-cover img-hover" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop" alt="notebook and laptop">
+              <div class="mt-4">
+                <h3 class="text-xl font-semibold">Clarity-first writing</h3>
+                <p class="mt-2 text-slate-300">Every brief begins with clarity: accurate research, clear structure, and an audience-first voice that converts.</p>
+                <div class="mt-4 flex gap-3">
+                  <a href="#work" class="text-sm px-4 py-2 rounded-md btn-ghost">View Work</a>
+                  <a href="#contact" class="text-sm px-4 py-2 rounded-md border border-white/10">Get in touch</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- marquee -->
+        <div class="mt-12 overflow-hidden whitespace-nowrap border-t border-b border-white/6 py-3">
+          <div class="inline-block animate-marquee" style="white-space:nowrap">
+            <span class="mx-6 text-slate-300">Websites & Landing Pages</span>•
+            <span class="mx-6 text-slate-300">Reports & Whitepapers</span>•
+            <span class="mx-6 text-slate-300">Video & Documentary Scripts</span>•
+            <span class="mx-6 text-slate-300">Ad Copy & Campaigns</span>•
+            <span class="mx-6 text-slate-300">LinkedIn & Resumes</span>•
+            <span class="mx-6 text-slate-300">PR & Press Releases</span>•
+            <span class="mx-6 text-slate-300">Articles & Blogs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (rewritten & SEO-friendly, trimmed) -->
+    <section id="about" class="py-16 lg:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+          <div data-aos="fade-right" class="reveal">
+            <h2 class="text-3xl font-semibold" style="color: #fff; font-family:'Playfair Display', serif;">About Word Funnel</h2>
+            <p class="mt-4 text-slate-300">
+              Word Funnel is a specialist content studio founded by journalist and content strategist <strong>George Rajasekaran</strong>. Since 2007 we’ve helped more than 100 organizations — corporates, MSMEs, NGOs and educational institutions — clear communication bottlenecks with research-led writing, SEO-aware copy and narrative filmmaking.
+            </p>
+
+            <h3 class="mt-6 text-lg font-semibold">Why organisations choose us</h3>
+            <ul class="mt-3 space-y-2 text-slate-300">
+              <li>• <strong>Tailored solutions:</strong> Domain-specific writers and strategies for each client.</li>
+              <li>• <strong>SEO & readability:</strong> Content that ranks and converts without sacrificing voice.</li>
+              <li>• <strong>Cost-effective:</strong> Professional-grade work priced 20–30% below market to help smaller organisations access quality content.</li>
+            </ul>
+
+            <p class="mt-4 text-slate-300">
+              We combine editorial rigor and practical publishing support — from drafts to publishing-ready formats and distribution guidance.
+            </p>
+          </div>
+
+          <div data-aos="fade-left" class="reveal glass p-6 rounded-2xl">
+            <h4 class="text-lg font-semibold">Our Story (Short)</h4>
+            <p class="mt-2 text-slate-300 text-sm">
+              Founded by a journalist with 20+ years' experience, Word Funnel began as a solopreneur venture near Chennai in 2007. Our founder has worked with organisations such as UNICEF, Freedom Fund, HelpAge India and national media outlets. Today a handpicked team of editors, writers and creatives delivers customised content for clients across India and internationally.
+            </p>
+
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <div class="p-3 rounded-md bg-black/40">
+                <div class="text-xs text-slate-300">Clients</div>
+                <div class="font-bold">100+</div>
+              </div>
+              <div class="p-3 rounded-md bg-black/40">
+                <div class="text-xs text-slate-300">Experience</div>
+                <div class="font-bold">Since 2007</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES with AI-based descriptions -->
+    <section id="services" class="py-16 lg:py-20 bg-black/20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-8" data-aos="fade-up">
+          <h2 class="text-3xl font-semibold">Services</h2>
+          <p class="text-slate-300 mt-2 max-w-2xl mx-auto">Full-spectrum content services crafted to your goals — clarity, credibility and conversion.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Each card: service title + AI description tailored to info -->
+          <article data-aos="fade-up" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">01</div>
+              <h3 class="font-semibold">Web Content Writing</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              SEO-friendly page copy and landing pages that clarify value propositions and guide visitors to action. We audit content gaps, craft headlines and microcopy, and deliver pages optimised for readability and conversions.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="40" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">02</div>
+              <h3 class="font-semibold">Social Media Content</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Platform-tailored captions, content calendars and reusable assets designed to increase engagement. We match tone and frequency to your audience and include brief performance suggestions.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="80" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">03</div>
+              <h3 class="font-semibold">Blog Writing & Email</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Research-backed blog posts and email sequences that attract organic traffic, nurture leads and articulate thought leadership. We deliver headlines, meta descriptions and distribution-ready drafts.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="120" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">04</div>
+              <h3 class="font-semibold">Google Ads & Ad Copy</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              High-impact short-form ad copy and search ad creatives that speak to intent and boost click-through rates. We test messaging variants and align copy with landing page goals.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="160" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">05</div>
+              <h3 class="font-semibold">Brochures & Flyers</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Crisp, benefit-led brochure copy and one-pagers for events, proposals and stakeholders. We write with hierarchy for design and supply print-ready text.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="200" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">06</div>
+              <h3 class="font-semibold">Reports, Whitepapers & E-books</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Structured long-form content with research, citations and clear executive summaries. Ideal for donors, boards and institutional audiences — we manage outlines, drafts and final formatting.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="240" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">07</div>
+              <h3 class="font-semibold">Press Releases & PR Copy</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Media-ready press releases and announcement copy written to secure coverage. We craft strong lead paragraphs, clear quotes and distribution notes tailored to journalists.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="280" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">08</div>
+              <h3 class="font-semibold">Video & Documentary Scripts</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Scriptwriting that balances narrative arc and practical production needs — shot lists, voiceover copy and pacing notes for promotional films, documentaries and YouTube content.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="320" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">09</div>
+              <h3 class="font-semibold">Resume & LinkedIn Profiles</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Career narratives and profile copy that highlight achievements and translate experience into measurable impact. ATS-friendly resumes and attention-grabbing LinkedIn summaries.
+            </p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="360" class="glass p-5 rounded-2xl card-hover">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gold/10 grid place-items-center text-gold font-semibold">10</div>
+              <h3 class="font-semibold">Art of Writing — Training</h3>
+            </div>
+            <p class="mt-3 text-slate-300 text-sm">
+              Practical, hands-on training to improve clarity and structure for teams and individuals. Workshops cover storytelling, editing and applied writing for business communications.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK / PORTFOLIO -->
+    <section id="work" class="py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-8" data-aos="fade-up">
+          <h2 class="text-3xl font-semibold">Selected Work</h2>
+          <p class="mt-2 text-slate-300">A sample of structured storytelling, reports and web copy we've delivered.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="glass p-4 rounded-2xl card-hover" data-aos="fade-up">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop" alt="NGO storytelling" class="rounded-lg w-full h-48 object-cover img-hover">
+            <h4 class="mt-3 font-semibold">NGO Impact Report</h4>
+            <p class="text-sm text-slate-300 mt-2">Research-driven narrative and donor-facing executive summary that increased grant interest.</p>
+          </div>
+
+          <div class="glass p-4 rounded-2xl card-hover" data-aos="fade-up" data-aos-delay="40">
+            <img src="corporate.jpeg" alt="Corporate site" class="rounded-lg w-full h-48 object-cover img-hover">
+            <h4 class="mt-3 font-semibold">Corporate Website Copy</h4>
+            <p class="text-sm text-slate-300 mt-2">Clear proposition and pillar pages to support lead generation campaigns.</p>
+          </div>
+
+          <div class="glass p-4 rounded-2xl card-hover" data-aos="fade-up" data-aos-delay="80">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop" alt="Documentary" class="rounded-lg w-full h-48 object-cover img-hover">
+            <h4 class="mt-3 font-semibold">Documentary Scripts</h4>
+            <p class="text-sm text-slate-300 mt-2">Engaging arcs and production-friendly storyboards for short documentaries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (primary) -->
+    <section id="testimonials" class="py-16 lg:py-20 bg-black/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-8" data-aos="fade-up">
+          <h2 class="text-3xl font-semibold">Testimonials</h2>
+          <p class="mt-2 text-slate-300">What clients say about working with Word Funnel.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Testimonial 1 -->
+          <figure class="testi-card reveal" data-aos="fade-up">
+            <div class="flex gap-4 items-start">
+              <img class="w-20 h-20 rounded-md object-cover shadow-md" src="testimonial1.png" alt="V. Selvarani">
+              <div>
+                <blockquote class="text-slate-100 testi-quote">
+                  “We are very impressed with the services of Word Funnel for preparation of reports, and engaging documentary scripts — everything was handled with creativity and precision. Your work has helped us communicate our vision more effectively and reach a target community.”
+                </blockquote>
+                <figcaption class="mt-3 text-slate-400 text-sm">
+                  V. Selvarani, M.Sc., M.Phil.<br>
+                  Managing Trustee — NIWAD TRUST, Salem
+                </figcaption>
+              </div>
+            </div>
+          </figure>
+
+          <!-- Testimonial 2 -->
+          <figure class="testi-card reveal" data-aos="fade-up" data-aos-delay="40">
+            <div class="flex gap-4 items-start">
+              <img class="w-20 h-20 rounded-md object-cover shadow-md" src="testimonial2.jpg" alt="Logesh Tamil Selvan">
+              <div>
+                <blockquote class="text-slate-100 testi-quote">
+                  “Word Funnel’s blog posts and website content have been a real asset for our premium florist client in Bangalore. They don’t just meet our keyword briefs—they weave SEO strategy with genuinely informative, reader-friendly writing that resonates with the target audience who become potential leads.”
+                </blockquote>
+                <figcaption class="mt-3 text-slate-400 text-sm">
+                  Logesh Tamil Selvan<br>
+                  Founder & CEO — Strobilan Technologies
+                </figcaption>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOUNDER -->
+    <section id="founder" class="py-16 lg:py-20 bg-black/5">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div data-aos="fade-right" class="reveal">
+            <h3 class="text-2xl font-semibold">Founder & Content Head</h3>
+            <p class="mt-3 text-slate-300">
+              <strong>George Rajasekaran</strong> — Journalist-turned-content strategist with over 20 years of experience. George leads research, structure and editorial delivery at Word Funnel, combining journalistic rigor with strategic storytelling.
+            </p>
+
+            <ul class="mt-4 text-slate-300 space-y-2 text-sm">
+              <li>• 20+ years in journalism and content strategy</li>
+              <li>• Worked with UNICEF, Freedom Fund, HelpAge India and several media outlets</li>
+              <li>• Available for retainers, consulting and workshops</li>
+            </ul>
+          </div>
+
+          <div data-aos="fade-left" class="reveal">
+            <div class="founder-wrap p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+              <div class="w-full sm:w-auto h-56 sm:h-64">
+                <img src="founder.jpg" alt="George Rajasekaran - Founder" class="founder-img img-hover">
+              </div>
+              <div>
+                <div class="text-lg font-semibold">George Rajasekaran</div>
+                <div class="text-slate-400 text-sm">Founder & Content Head, Word Funnel</div>
+                <p class="mt-3 text-slate-300 text-sm">George focuses on clarity-first narratives for organisational communications, long-form reports and visual storytelling.</p>
+                <div class="mt-4">
+                  <a href="#booking" class="inline-flex items-center gap-2 px-4 py-2 rounded-md" style="background:#cbb067;color:#07101a;font-weight:600;">Book a consult</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / BOOKING -->
+    <section id="booking" class="py-16 lg:py-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="glass p-8 rounded-2xl">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div data-aos="fade-right" class="reveal">
+              <h3 class="text-2xl font-semibold">Start a project / Book an appointment</h3>
+              <p class="mt-2 text-slate-300">Send a brief and we’ll propose next steps. Typical response time: 24–48 hours.</p>
+
+              <ul class="mt-4 text-slate-300 space-y-2 text-sm">
+                <li>• Phone / WhatsApp: <a href="tel:+919362119005" class="text-gold">+91 93621 19005</a></li>
+                <li>• Email: <a href="mailto:wordfunnel101@gmail.com" class="text-gold">wordfunnel101@gmail.com</a></li>
+                <li>• Address: 471, Judges Colony, Tamilnadu Housing Board, Salem - 636008</li>
+              </ul>
+            </div>
+
+            <form data-aos="fade-left" class="reveal grid gap-3" onsubmit="event.preventDefault(); alert('Thanks — we received your request. We will contact you shortly.');">
+              <div class="grid sm:grid-cols-2 gap-3">
+                <input required name="name" placeholder="Full name" class="px-4 py-3 rounded-xl bg-black/40 border border-white/6 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
+                <input required type="email" name="email" placeholder="Email" class="px-4 py-3 rounded-xl bg-black/40 border border-white/6 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
+              </div>
+
+              <input name="company" placeholder="Company / Institution" class="px-4 py-3 rounded-xl bg-black/40 border border-white/6 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent">
+              <select name="service" class="px-4 py-3 rounded-xl bg-black/40 border border-white/6 text-white focus:outline-none focus:ring-2 focus:ring-accent">
+                <option>Service of interest</option>
+                <option>Web Content Writing</option>
+                <option>Social Media Content</option>
+                <option>Reports & Whitepapers</option>
+                <option>Video Scripts</option>
+                <option>Press Releases</option>
+                <option>Resume & LinkedIn</option>
+                <option>Training / Workshops</option>
+              </select>
+
+              <textarea name="message" rows="4" placeholder="Brief about your project, goals & timeline" class="px-4 py-3 rounded-xl bg-black/40 border border-white/6 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+
+              <div class="flex items-center gap-3">
+                <button class="px-6 py-3 rounded-xl" style="background:#cbb067;color:#07101a;font-weight:700;">Request Booking</button>
+                <a href="mailto:wordfunnel101@gmail.com" class="px-4 py-3 rounded-xl border border-white/8">Email us</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="pt-12 pb-10 border-t border-white/6">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div>
+            <div class="flex items-center gap-3">
+              <img src="companylogo.jpg" alt="Word Funnel logo" class="h-12 w-12 object-contain rounded-md">
+              <div>
+                <div class="font-semibold" style="color: #cbb067;">Word Funnel</div>
+                <div class="text-xs text-slate-400">Where words flow and results grow</div>
+              </div>
+            </div>
+            <p class="mt-4 text-slate-300 text-sm max-w-sm">
+              Clarity-first content for organisations. Web copy, reports, films, and training. Based in Salem, Tamil Nadu.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold">Contact</h4>
+            <ul class="mt-3 space-y-2 text-slate-300 text-sm">
+              <li><strong>Email:</strong> <a href="mailto:wordfunnel101@gmail.com" class="text-gold hover:underline">wordfunnel101@gmail.com</a></li>
+              <li><strong>Phone/WhatsApp:</strong> <a href="tel:+919362119005" class="text-gold hover:underline">+91 93621 19005</a></li>
+              <li><strong>Address:</strong> 471, Judges Colony, Tamilnadu Housing Board, Salem - 636008</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold">Quick Links</h4>
+            <div class="mt-3 grid grid-cols-2 gap-2 text-slate-300 text-sm">
+              <a href="#about" class="hover:text-white">About</a>
+              <a href="#services" class="hover:text-white">Services</a>
+              <a href="#work" class="hover:text-white">Work</a>
+              <a href="#testimonials" class="hover:text-white">Testimonials</a>
+              <a href="#founder" class="hover:text-white">Founder</a>
+              <a href="#booking" class="hover:text-white">Booking</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/6 text-sm text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
+          <div>© <script>document.write(new Date().getFullYear())</script> Word Funnel — All rights reserved.</div>
+          <div>Designed by <a href="https://www.talentronaut.in/" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline">Talentronaut Technologies</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- AOS & interactions -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const openIcon = document.getElementById('openIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    mobileBtn?.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', !isHidden);
+      openIcon.classList.toggle('hidden', !isHidden);
+      closeIcon.classList.toggle('hidden', isHidden);
+    });
+
+    // Intersection reveal for elements with .reveal (fallback to AOS)
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('*').forEach(n => n.style.animation = 'none');
+    }
+  </script>
+</body>
+</html>
