@@ -58,23 +58,23 @@
     html { scroll-behavior: smooth; }
     body { background: linear-gradient(180deg,#07101a 0%, #05080b 100%); color: #e6eef8; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     .glass { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); backdrop-filter: blur(6px) saturate(120%); border-radius: 12px; }
-    .card-hover { transition: transform .32s ease, box-shadow .32s ease; }
-    .card-hover:hover { transform: translateY(-10px); box-shadow: 0 30px 80px rgba(2,6,23,0.65); }
-    .img-hover { transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .4s; will-change: transform; }
-    .img-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 30px 70px rgba(2,6,23,0.6); }
+    .card-hover { transition: transform .28s ease, box-shadow .28s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 26px 72px rgba(2,6,23,0.6); }
+    .img-hover { transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .35s; will-change: transform; }
+    .img-hover:hover { transform: translateY(-6px) scale(1.015); box-shadow: 0 26px 64px rgba(2,6,23,0.55); }
     .underline-anim { position: relative; display:inline-block; }
     .underline-anim::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 0; height: 3px; background: #cbb067; transition: width .28s ease; border-radius: 2px; }
     .underline-anim:hover::after { width: 100%; }
-    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
     .promo-float { position: fixed; right: 18px; bottom: 18px; z-index: 80; width: 86px; height:86px; border-radius:14px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg,#08121a,#102232); border: 3px solid rgba(255,255,255,0.04); box-shadow: 0 18px 54px rgba(0,0,0,0.6); transition: transform .18s ease; }
     .promo-float img{ width:70px; height:70px; object-fit:cover; border-radius:10px; }
     .promo-float:hover { transform: translateY(-6px) scale(1.04); }
-    .testi-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); border-radius: 10px; padding: 1.1rem; transition: transform .36s, box-shadow .36s; }
-    .testi-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(2,6,23,0.6); }
+    .testi-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); border-radius: 10px; padding: 1rem; transition: transform .3s, box-shadow .3s; }
+    .testi-card:hover { transform: translateY(-6px); box-shadow: 0 22px 56px rgba(2,6,23,0.55); }
     .founder-img { border-radius: 12px; object-fit: cover; width:100%; height:100%; }
     a:focus { outline: 3px solid rgba(203,176,103,0.08); outline-offset: 4px; }
-    @media (min-width:1024px){ .hero-title{ font-size: 3.2rem; line-height: 1.02; } }
+    @media (min-width:1024px){ .hero-title{ font-size: 3rem; line-height: 1.05; } }
   </style>
 </head>
 <body class="antialiased">
@@ -128,14 +128,14 @@
 
   <!-- HERO -->
   <main>
-    <section id="home" class="relative overflow-hidden pt-10 pb-24">
+    <section id="home" class="relative overflow-hidden pt-10 pb-16">
       <div class="absolute inset-0 -z-10">
         <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=2000&auto=format&fit=crop" alt="writing background" class="w-full h-full object-cover brightness-50">
         <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(7,16,26,0.6), rgba(7,10,14,0.9));"></div>
       </div>
 
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
           <div data-aos="fade-right" class="space-y-6">
             <div class="inline-flex items-center gap-3">
               <span class="px-3 py-1 rounded-full text-xs font-semibold" style="background:rgba(203,176,103,0.12); color:var(--gold);">Since 2007</span>
@@ -187,7 +187,7 @@
         </div>
 
         <!-- marquee -->
-        <div class="mt-12 overflow-hidden whitespace-nowrap border-t border-b border-white/6 py-3">
+        <div class="mt-10 overflow-hidden whitespace-nowrap border-t border-b border-white/6 py-3">
           <div class="inline-block animate-marquee" style="white-space:nowrap">
             <span class="mx-6 text-slate-300">Websites & Landing Pages</span>•
             <span class="mx-6 text-slate-300">Reports & Whitepapers</span>•
@@ -201,10 +201,10 @@
       </div>
     </section>
 
-    <!-- ABOUT (rewritten & SEO-friendly, trimmed) -->
-    <section id="about" class="py-16 lg:py-20">
+    <!-- ABOUT (trimmed spacing) -->
+    <section id="about" class="py-12 lg:py-16">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div class="grid lg:grid-cols-2 gap-6 items-start">
           <div data-aos="fade-right" class="reveal">
             <h2 class="text-3xl font-semibold" style="color: #fff; font-family:'Playfair Display', serif;">About Word Funnel</h2>
             <p class="mt-4 text-slate-300">
@@ -244,15 +244,15 @@
       </div>
     </section>
 
-    <!-- SERVICES with AI-based descriptions -->
-    <section id="services" class="py-16 lg:py-20 bg-black/20">
+    <!-- SERVICES (trimmed spacing) -->
+    <section id="services" class="py-12 lg:py-16 bg-black/20">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-8" data-aos="fade-up">
           <h2 class="text-3xl font-semibold">Services</h2>
           <p class="text-slate-300 mt-2 max-w-2xl mx-auto">Full-spectrum content services crafted to your goals — clarity, credibility and conversion.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           <!-- Each card: service title + AI description tailored to info -->
           <article data-aos="fade-up" class="glass p-5 rounded-2xl card-hover">
             <div class="flex items-center gap-3">
@@ -357,15 +357,15 @@
       </div>
     </section>
 
-    <!-- WORK / PORTFOLIO -->
-    <section id="work" class="py-16 lg:py-20">
+    <!-- WORK / PORTFOLIO (trimmed spacing) -->
+    <section id="work" class="py-12 lg:py-16">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-8" data-aos="fade-up">
           <h2 class="text-3xl font-semibold">Selected Work</h2>
           <p class="mt-2 text-slate-300">A sample of structured storytelling, reports and web copy we've delivered.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-3 gap-5">
           <div class="glass p-4 rounded-2xl card-hover" data-aos="fade-up">
             <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop" alt="NGO storytelling" class="rounded-lg w-full h-48 object-cover img-hover">
             <h4 class="mt-3 font-semibold">NGO Impact Report</h4>
@@ -387,15 +387,15 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS (primary) -->
-    <section id="testimonials" class="py-16 lg:py-20 bg-black/10">
+    <!-- TESTIMONIALS (trimmed spacing) -->
+    <section id="testimonials" class="py-12 lg:py-16 bg-black/10">
       <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-8" data-aos="fade-up">
           <h2 class="text-3xl font-semibold">Testimonials</h2>
           <p class="mt-2 text-slate-300">What clients say about working with Word Funnel.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <div class="grid md:grid-cols-2 gap-5">
           <!-- Testimonial 1 -->
           <figure class="testi-card reveal" data-aos="fade-up">
             <div class="flex gap-4 items-start">
@@ -427,15 +427,31 @@
               </div>
             </div>
           </figure>
+
+          <!-- Testimonial 3 (NEW) -->
+          <figure class="testi-card reveal" data-aos="fade-up" data-aos-delay="80">
+            <div class="flex gap-4 items-start">
+              <img class="w-20 h-20 rounded-md object-cover shadow-md" src="testimonial3.jpg" alt="Senior Space Marketing Professional">
+              <div>
+                <blockquote class="text-slate-100 testi-quote">
+                  “As a senior space marketing professional at a prominent English daily, I am personally aware of George Rajasekaran's exceptional journalistic writing acumen and marketing communication skills, which have consistently impressed me.”
+                </blockquote>
+                <figcaption class="mt-3 text-slate-400 text-sm">
+                  Senior Space Marketing Professional<br>
+                  Prominent English Daily
+                </figcaption>
+              </div>
+            </div>
+          </figure>
         </div>
       </div>
     </section>
 
 
-    <!-- FOUNDER -->
-    <section id="founder" class="py-16 lg:py-20 bg-black/5">
+    <!-- FOUNDER (trimmed spacing) -->
+    <section id="founder" class="py-12 lg:py-16 bg-black/5">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-6 items-center">
           <div data-aos="fade-right" class="reveal">
             <h3 class="text-2xl font-semibold">Founder & Content Head</h3>
             <p class="mt-3 text-slate-300">
@@ -468,11 +484,11 @@
       </div>
     </section>
 
-    <!-- CONTACT / BOOKING -->
-    <section id="booking" class="py-16 lg:py-20">
+    <!-- CONTACT / BOOKING (trimmed spacing) -->
+    <section id="booking" class="py-12 lg:py-16">
       <div class="max-w-5xl mx-auto px-6">
         <div class="glass p-8 rounded-2xl">
-          <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div class="grid md:grid-cols-2 gap-6 items-start">
             <div data-aos="fade-right" class="reveal">
               <h3 class="text-2xl font-semibold">Start a project / Book an appointment</h3>
               <p class="mt-2 text-slate-300">Send a brief and we’ll propose next steps. Typical response time: 24–48 hours.</p>
@@ -515,7 +531,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact" class="pt-12 pb-10 border-t border-white/6">
+    <footer id="contact" class="pt-10 pb-8 border-t border-white/6">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid md:grid-cols-3 gap-6">
           <div>
@@ -564,7 +580,7 @@
   <!-- AOS & interactions -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+    AOS.init({ duration: 650, once: true, easing: 'ease-out-cubic' });
 
     // Mobile menu toggle
     const mobileBtn = document.getElementById('mobileBtn');
